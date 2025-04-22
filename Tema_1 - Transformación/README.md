@@ -127,8 +127,8 @@ data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
 
 df = pd.DataFrame(data)
 
-# Eliminamos las filas con valores nulos (n/a) 
-df_limpio = df.dropna()
+# Eliminamos las edades con valores nulos (n/a) 
+df_limpio = df['Edad'].dropna()
 
 # Rellenamos los valores nulos con un valor por defecto (0) 
 df['Salario'] = df['Salario'].fillna(0)
