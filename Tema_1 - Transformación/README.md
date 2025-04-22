@@ -80,69 +80,54 @@ pip install pandas
 
 ## Ejemplo básico
 
-Aquí tienes un ejemplo básico de cómo usar Pandas para cargar y analizar un archivo CSV:
+Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar datos de un archivo CSV:
 
 ```python
 import pandas as pd
 
-# Cargar un archivo CSV
+# Cargamos los datos de un archivo CSV
 df = pd.read_csv('datos.csv')
 
-# Mostrar las primeras filas
-print(df.head())
+# Mostramos el DataFrame
+print(df)
 
-# Filtrar datos
-filtrado = df[df['columna'] > 10]
+# Filtramos los datos si el contenido de una columna en concreto es mayor a 10
+df_filtrado = df[df['columna'] > 10]
+print(df_filtrado)
 
-# Calcular estadísticas
-print(df.describe())
-```
-
-## Visualización de datos con Pandas
-
-```python
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Crear un DataFrame
-df = pd.DataFrame({'Mes': ['Enero', 'Febrero', 'Marzo'], 'Ventas': [200, 300, 250]})
-
-# Graficar
-df.plot(x='Mes', y='Ventas', kind='bar')
-plt.title('Ventas Mensuales')
-plt.show()
 ```
 
 ## Ejemplo básico de transformación con Pandas
 
-Aquí tenéis un ejemplo paso a paso de cómo realizar transformaciones comunes con Pandas:
+A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Pandas (Creación, Eliminación,Rellenado de valores nulos(modificación), Filtrado, Ordenación):
 
 ```python
 import pandas as pd
 
-# Crear un DataFrame de ejemplo
+# Creamos un DataFrame con datos de ejemplo 
 data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
         'Edad': [25, 30, None, 22],
         'Salario': [3000, 4000, 3500, None]}
 
 df = pd.DataFrame(data)
 
-# 1. Eliminar filas con valores nulos
+# Eliminamos las filas con valores nulos (n/a) 
 df_limpio = df.dropna()
 
-# 2. Rellenar valores nulos con un valor por defecto
+# Rellenamos los valores nulos con un valor por defecto (0) 
 df['Salario'] = df['Salario'].fillna(0)
 
-# 3. Crear una nueva columna
-df['Salario_Anual'] = df['Salario'] * 12
+# Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12. 
+df['Salario_anual'] = df['Salario'] * 12
 
-# 4. Filtrar datos (personas mayores de 25 años)
+# Filtramos los datos (solo personas mayores de 25 años) 
 df_filtrado = df[df['Edad'] > 25]
 
-# 5. Ordenar datos por salario
+# Ordenamos los datos por salario, podemos elegir si queremos orden ascendente (true) o como en este caso, descendente (False) 
 df_ordenado = df.sort_values(by='Salario', ascending=False)
 
 print(df_ordenado)
+
 ```
 
 ## Recursos adicionales
