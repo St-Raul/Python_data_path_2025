@@ -15,7 +15,7 @@ Ahora es momento de poner a prueba tus conocimientos con un reto final. 😎
 # 🚀 ¡Tú puedes!
 
 Tómate el tiempo que necesites para escribir tu propio cajero automático desde cero.
-Este ejercicio te ayudará a reforzar tu lógica y tu capacidad para estructurar programas en Python.
+Este ejercicio te ayudará a reforzar tu lógica y tu capacidad para estructurar programas en Python ademas de practicar la programacion orientada a objeto.
 
 Cuando termines, siéntete libre de seguir practicando o ¡comparte tu resultado con otros!
 Y recuerda: programar es practicar 💻❤️
