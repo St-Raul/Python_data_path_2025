@@ -81,12 +81,10 @@ Para instalar Pandas, puedes usar `pip`:
 <details>
   <summary>Solución</summary>
 
-        ```bash
+```bash
+pip install pandas
+```
 
-        pip install pandas
-        
-        ```
-        
 </details>
 
 ## Ejemplo básico
@@ -96,59 +94,56 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
 <details>
   <summary>Solución</summary>
 
-        ```python
+```python
+import pandas as pd
 
-        import pandas as pd
+# Cargamos los datos de un archivo CSV
+df = pd.read_csv('datos.csv')
 
-        # Cargamos los datos de un archivo CSV
-        df = pd.read_csv('datos.csv')
+# Mostramos el DataFrame
+print(df)
 
-        # Mostramos el DataFrame
-        print(df)
-
-        # Filtramos los datos si el contenido de una columna en concreto es mayor a 10
-        df_filtrado = df[df['columna'] > 10]
-        print(df_filtrado)
-
-        ```
+# Filtramos los datos si el contenido de una columna en concreto es mayor a 10
+df_filtrado = df[df['columna'] > 10]
+print(df_filtrado)
+```
 
 </details>
 
-
 ## Ejemplo básico de transformación con Pandas
 
-A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Pandas (Creación, Eliminación,Rellenado de valores nulos(modificación), Filtrado, Ordenación):
+A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Pandas (Creación, Eliminación, Rellenado de valores nulos, Filtrado, Ordenación):
 
 <details>
- <summary>Solución</summary>
+  <summary>Solución</summary>
 
-        ```python
-        import pandas as pd
+```python
+import pandas as pd
 
-        # Creamos un DataFrame con datos de ejemplo 
-        data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
-                'Edad': [25, 30, None, 22],
-                'Salario': [3000, 4000, 3500, None]}
+# Creamos un DataFrame con datos de ejemplo 
+data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
+        'Edad': [25, 30, None, 22],
+        'Salario': [3000, 4000, 3500, None]}
 
-        df = pd.DataFrame(data)
+df = pd.DataFrame(data)
 
-        # Eliminamos las filas con valores nulos (n/a) 
-        df_limpio = df.dropna()
+# Eliminamos las filas con valores nulos (n/a) 
+df_limpio = df.dropna()
 
-        # Rellenamos los valores nulos con un valor por defecto (0) 
-        df['Salario'] = df['Salario'].fillna(0)
+# Rellenamos los valores nulos con un valor por defecto (0) 
+df['Salario'] = df['Salario'].fillna(0)
 
-        # Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12. 
-        df['Salario_anual'] = df['Salario'] * 12
+# Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12. 
+df['Salario_anual'] = df['Salario'] * 12
 
-        # Filtramos los datos (solo personas mayores de 25 años) 
-        df_filtrado = df[df['Edad'] > 25]
+# Filtramos los datos (solo personas mayores de 25 años) 
+df_filtrado = df[df['Edad'] > 25]
 
-        # Ordenamos los datos por salario, podemos elegir si queremos orden ascendente (true) o como en este caso, descendente (False) 
-        df_ordenado = df.sort_values(by='Salario', ascending=False)
+# Ordenamos los datos por salario, podemos elegir si queremos orden ascendente (true) o como en este caso, descendente (False) 
+df_ordenado = df.sort_values(by='Salario', ascending=False)
 
-        print(df_ordenado)
-        ```
+print(df_ordenado)
+```
 
 </details>
 
@@ -209,9 +204,9 @@ Para instalar Polars, puedes usar `pip`:
 <details>
   <summary>Solución</summary>
 
-        ```bash
-        pip install polars
-        ```
+```bash
+pip install polars
+```
 
 </details>
 
@@ -222,56 +217,56 @@ Vamos a realizar un ejemplo básico de cómo usar Polars para cargar y filtrar d
 <details>
   <summary>Solución</summary>
 
-        ```python
-        import polars as pl
+```python
+import polars as pl
 
-        # Cargamos los datos de un archivo CSV
-        df = pl.read_csv('datos.csv')
+# Cargamos los datos de un archivo CSV
+df = pl.read_csv('datos.csv')
 
-        # Mostramos el DataFrame
-        print(df)
+# Mostramos el DataFrame
+print(df)
 
-        # Filtramos los datos si el contenido de una columna en concreto es mayor a 10
-        df_filtrado = df.filter(pl.col('columna') > 10)
-        print(df_filtrado)
-        ```
+# Filtramos los datos si el contenido de una columna en concreto es mayor a 10
+df_filtrado = df.filter(pl.col('columna') > 10)
+print(df_filtrado)
+```
 
 </details>
 
-## Ejemplo básico de transformación con Pandas
+## Ejemplo básico de transformación con Polars
 
 A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Polars (Creación, Eliminación, Rellenado de valores nulos, Filtrado, Ordenación):
 
 <details>
   <summary>Solución</summary>
 
-        ```python
-        import polars as pl
+```python
+import polars as pl
 
-        # Creamos un DataFrame con datos de ejemplo
-        data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
-                'Edad': [25, 30, None, 22],
-                'Salario': [3000, 4000, 3500, None]}
+# Creamos un DataFrame con datos de ejemplo
+data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
+        'Edad': [25, 30, None, 22],
+        'Salario': [3000, 4000, 3500, None]}
 
-        df = pl.DataFrame(data)
+df = pl.DataFrame(data)
 
-        # Eliminamos las filas con valores nulos
-        df_limpio = df.drop_nulls()
+# Eliminamos las filas con valores nulos
+df_limpio = df.drop_nulls()
 
-        # Rellenamos los valores nulos con un valor por defecto (0)
-        df = df.with_columns(pl.col('Salario').fill_null(0))
+# Rellenamos los valores nulos con un valor por defecto (0)
+df = df.with_columns(pl.col('Salario').fill_null(0))
 
-        # Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12
-        df = df.with_columns((pl.col('Salario') * 12).alias('Salario_anual'))
+# Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12
+df = df.with_columns((pl.col('Salario') * 12).alias('Salario_anual'))
 
-        # Filtramos los datos (solo personas mayores de 25 años)
-        df_filtrado = df.filter(pl.col('Edad') > 25)
+# Filtramos los datos (solo personas mayores de 25 años)
+df_filtrado = df.filter(pl.col('Edad') > 25)
 
-        # Ordenamos los datos por salario en orden descendente
-        df_ordenado = df.sort('Salario', reverse=True)
+# Ordenamos los datos por salario en orden descendente
+df_ordenado = df.sort('Salario', reverse=True)
 
-        print(df_ordenado)
-        ```
+print(df_ordenado)
+```
 
 </details>
 
