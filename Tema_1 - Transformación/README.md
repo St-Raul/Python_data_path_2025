@@ -26,7 +26,7 @@ Las transformaciones de datos son esenciales para:
 - **Reducir errores y mejorar la calidad de los datos**.
 - **Facilitar el análisis y la visualización**.
 
-
+<hr>
 
 ### Ahora que hemos entrado en contexto sobre qué son las transformaciones, vamos a ver como realizarlas. Para ello vamos a usar la biblioteca de **Pandas** y **Polars**
 
