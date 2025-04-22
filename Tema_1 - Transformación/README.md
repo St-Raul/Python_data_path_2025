@@ -82,7 +82,9 @@ Para instalar Pandas, puedes usar `pip`:
   <summary>Solución</summary>
 
         ```bash
+
         pip install pandas
+        
         ```
         
 </details>
@@ -95,6 +97,7 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
   <summary>Solución</summary>
 
         ```python
+
         import pandas as pd
 
         # Cargamos los datos de un archivo CSV
@@ -106,6 +109,7 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
         # Filtramos los datos si el contenido de una columna en concreto es mayor a 10
         df_filtrado = df[df['columna'] > 10]
         print(df_filtrado)
+
         ```
 
 </details>
