@@ -80,9 +80,11 @@ Para instalar Pandas, puedes usar `pip`:
 
 <details>
   <summary>Solución</summary>
+
         ```bash
         pip install pandas
         ```
+        
 </details>
 
 ## Ejemplo básico
@@ -91,6 +93,7 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
 
 <details>
   <summary>Solución</summary>
+
         ```python
         import pandas as pd
 
@@ -104,6 +107,7 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
         df_filtrado = df[df['columna'] > 10]
         print(df_filtrado)
         ```
+
 </details>
 
 
@@ -113,6 +117,7 @@ A continuación realizaremos un ejemplo paso a paso de cómo realizar transforma
 
 <details>
  <summary>Solución</summary>
+
         ```python
         import pandas as pd
 
@@ -140,6 +145,7 @@ A continuación realizaremos un ejemplo paso a paso de cómo realizar transforma
 
         print(df_ordenado)
         ```
+
 </details>
 
 ## Recursos adicionales de Pandas
@@ -198,9 +204,11 @@ Para instalar Polars, puedes usar `pip`:
 
 <details>
   <summary>Solución</summary>
+
         ```bash
         pip install polars
         ```
+
 </details>
 
 ## Ejemplo básico
@@ -209,6 +217,7 @@ Vamos a realizar un ejemplo básico de cómo usar Polars para cargar y filtrar d
 
 <details>
   <summary>Solución</summary>
+
         ```python
         import polars as pl
 
@@ -222,6 +231,7 @@ Vamos a realizar un ejemplo básico de cómo usar Polars para cargar y filtrar d
         df_filtrado = df.filter(pl.col('columna') > 10)
         print(df_filtrado)
         ```
+
 </details>
 
 ## Ejemplo básico de transformación con Pandas
@@ -230,6 +240,7 @@ A continuación realizaremos un ejemplo paso a paso de cómo realizar transforma
 
 <details>
   <summary>Solución</summary>
+
         ```python
         import polars as pl
 
@@ -257,6 +268,7 @@ A continuación realizaremos un ejemplo paso a paso de cómo realizar transforma
 
         print(df_ordenado)
         ```
+
 </details>
 
 ## Recursos adicionales de Polars
