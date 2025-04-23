@@ -97,14 +97,14 @@ Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar d
 ```python
 import pandas as pd
 
-# Cargamos los datos de un archivo CSV
+# Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"
 df = pd.read_csv('datos.csv')
 
 # Mostramos el DataFrame
 print(df)
 
-# Filtramos los datos si el contenido de una columna en concreto es mayor a 10
-df_filtrado = df[df['columna'] > 10]
+# Filtramos los datos si el contenido de una columna en concreto es mayor a 25
+df_filtrado = df[df['columna'] > 25]
 print(df_filtrado)
 ```
 
@@ -220,14 +220,14 @@ Vamos a realizar un ejemplo básico de cómo usar Polars para cargar y filtrar d
 ```python
 import polars as pl
 
-# Cargamos los datos de un archivo CSV
+# Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"
 df = pl.read_csv('datos.csv')
 
 # Mostramos el DataFrame
 print(df)
 
-# Filtramos los datos si el contenido de una columna en concreto es mayor a 10
-df_filtrado = df.filter(pl.col('columna') > 10)
+# Filtramos los datos si el contenido de una columna en concreto es mayor a 25
+df_filtrado = df.filter(pl.col('columna') > 25)
 print(df_filtrado)
 ```
 
@@ -294,3 +294,4 @@ print(df_ordenado)
 
 - **Pandas** es ideal para tareas de análisis exploratorio y manipulación de datos en proyectos pequeños o medianos, gracias a su facilidad de uso y amplia documentación.
 - **Polars** destaca en escenarios donde el rendimiento y la escalabilidad son críticos, siendo una opción excelente para trabajar con grandes volúmenes de datos o pipelines complejos.
+
