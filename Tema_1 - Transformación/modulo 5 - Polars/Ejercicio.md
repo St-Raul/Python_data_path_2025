@@ -3,10 +3,12 @@
 ## Objetivo
 El objetivo de este ejercicio es realizar un análisis exhaustivo del dataset de Netflix utilizando Polars y NumPy. Implementarás operaciones avanzadas de manipulación de datos, cálculos estadísticos y visualización de resultados.
 
+<hr>
+
 ## Instrucciones
 ### Carga y Exploración de Datos
 
-- Carga el archivo Netflix_Dataset.csv utilizando Polars.
+- Carga el archivo Netflix_Dataset.csv utilizando Polars.(Se encuentra en la carpeta de Recursos).
 - Verifica si hay valores nulos en el dataset y calcula el porcentaje de valores faltantes por columna.
 - Identifica las columnas con valores categóricos y las columnas con valores numéricos.
 
@@ -30,14 +32,25 @@ El objetivo de este ejercicio es realizar un análisis exhaustivo del dataset de
 #### Usa NumPy para calcular:
 - La correlación entre las puntuaciones (IMDb Score, Rotten Tomatoes Score, Metacritic Score).
 - La desviación estándar de las puntuaciones.
-- Genera un histograma de las puntuaciones de IMDb utilizando NumPy.
 
 ### Exportación de Resultados
 
-- Guarda un nuevo archivo CSV con las columnas originales más una nueva columna llamada Overall Score, que será el promedio ponderado de las puntuaciones (IMDb Score, Rotten Tomatoes Score, Metacritic Score).
-- Exporta un resumen en formato JSON con las estadísticas clave calculadas.
+- Guarda un nuevo archivo CSV con las columnas originales más una nueva columna llamada Overall Score, que será el promedio ponderado de las puntuaciones (IMDb Score, Rotten Tomatoes Score, Metacritic Score).Como ayuda, puedes usar los siguientes pesos:
+  .- IMDb Score: 50%
+  .- Rotten Tomatoes Score: 30%
+  .- Metacritic Score: 20%
+- Exporta un resumen en formato JSON con las estadísticas clave calculadas previamente. Como ayuda, las estadísticas clave son:
+  .- Película con la mayor puntuación de IMDb.
+  .- Película con la mayor puntuación de Rotten Tomatoes.
+  .- País con mayor disponibilidad de contenido.
+  .- Promedio de puntuaciones por género.
+  .- Número de películas y series disponibles.
+  .- Desviación estándar de las puntuaciones.
+  .- Matriz de correlación entre las puntuaciones.
 
-## Pistas y Requisitos Técnicos
+<hr>
+
+## Pistas y Requisitos Técnicos 
 - Usa Polars para todas las operaciones de manipulación de datos.
 - Usa NumPy para cálculos numéricos avanzados.
 - Asegúrate de manejar excepciones para evitar errores en caso de datos faltantes o formatos inesperados.
