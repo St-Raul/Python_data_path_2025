@@ -444,6 +444,9 @@ pip install numpy
 
 ## Ejemplo básico de cómo usar NumPy para crear y manipular arrays:
 
+Vamos a realizar un ejemplo básico de cómo usar NumPy para crear y manipular arrays:
+
+
 <details> 
   <summary>Solución: Creamos un array unidimensional(array) y otro bidimensional(matriz)</summary>
 
@@ -524,7 +527,7 @@ print("Array transpuesto:\n", array_transpuesto)
 </details>
 
 <details> 
-  <summary>Solución: Filtramos los elementos mayores a 50</summary>
+  <summary>Solución: Filtramos los elementos del array inicial mayores a 50</summary>
 
 ```python
 array_filtrado = array[array > 50]
