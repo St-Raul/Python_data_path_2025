@@ -443,20 +443,30 @@ pip install numpy
 
 ## Ejemplo básico de cómo usar NumPy para crear y manipular arrays:
 
-<details> <summary>Solución</summary>
+<details> 
+  <summary>Solución: Creamos un array unidimensional(array) y otro bidimensional(matriz)</summary>
 
 ```python
 import numpy as np
 
-# Creamos un array unidimensional(array) y otro bidimensional(matriz)
 array = np.array([1, 2, 3, 4, 5])
 matriz = np.array([[1, 2, 3], [4, 5, 6]])
 
-# Realizamos operaciones matemáticas (Array multiplicado por 2, Suma de los elementos de la matriz)
+# Mostramos el array y la matriz
+print("Array unidimensional:", array)
+print("Matriz bidimensional:\n", matriz)
+```
+
+</details>
+
+<details> 
+  <summary>Solución:  Realizamos operaciones matemáticas (Array multiplicado por 2, Suma de los elementos de la matriz)</summary>
+
+```python
 array_doble = array * 2
 suma = np.sum(matriz)
 
-print("Array original:", array)
+# Mostramos los resultados
 print("Array multiplicado por 2:", array_doble)
 print("Suma de los elementos de la matriz:", suma)
 ```
@@ -466,30 +476,58 @@ print("Suma de los elementos de la matriz:", suma)
 
 ## Ejemplo básico de transformación con NumPy
 
-<details> <summary>Solución</summary>
+<details> 
+  <summary>Solución: Creamos un array con valores aleatorios</summary>
 
 ```python
 import numpy as np
 
-# Creamos un array con valores aleatorios
 array = np.random.randint(1, 100, size=(4, 4))
 
-# Calculamos la media y la desviación estándar
+# Mostramos el array
+print("Array:\n", array)
+```
+</details>
+
+<details> 
+  <summary>Solución: Calculamos la media y la desviación estándar</summary>
+
+```python
 media = np.mean(array)
 desviacion = np.std(array)
 
-# Normalizamos los datos (restamos la media y dividimos por la desviación estándar)
+print("Media:", media)
+print("Desviación estándar:", desviacion)
+```
+
+</details>
+
+<details> 
+  <summary>Solución: Normalizamos los datos (restamos la media y dividimos por la desviación estándar)</summary>
+
+```python
 array_normalizado = (array - media) / desviacion
 
-# Transponemos el array
+print("Array normalizado:\n", array_normalizado)
+```
+</details>
+
+<details> 
+  <summary>Solución: Transponemos el array</summary>
+
+```python
 array_transpuesto = array.T
 
-# Filtramos los elementos mayores a 50
+print("Array transpuesto:\n", array_transpuesto)
+```
+</details>
+
+<details> 
+  <summary>Solución: Filtramos los elementos mayores a 50</summary>
+
+```python
 array_filtrado = array[array > 50]
 
-print("Array original:\n", array)
-print("Array normalizado:\n", array_normalizado)
-print("Array transpuesto:\n", array_transpuesto)
 print("Elementos mayores a 50:", array_filtrado)
 ```
 
