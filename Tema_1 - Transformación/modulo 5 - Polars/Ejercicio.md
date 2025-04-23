@@ -8,7 +8,7 @@ El objetivo de este ejercicio es realizar un análisis exhaustivo del dataset de
 ## Instrucciones
 ### Carga y Exploración de Datos
 
-- Carga el archivo Netflix_Dataset.csv utilizando Polars.(Se encuentra en la carpeta de Recursos).
+- Carga el archivo Netflix_Dataset.csv utilizando Polars.(Se encuentra en la carpeta de Recursos, pero puedes moverlo a la carpeta donde se ubica tu script de Python para facilitarte la ruta).
 - Verifica si hay valores nulos en el dataset y calcula el porcentaje de valores faltantes por columna.
 - Identifica las columnas con valores categóricos y las columnas con valores numéricos.
 
