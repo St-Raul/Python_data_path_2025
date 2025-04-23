@@ -123,12 +123,14 @@ A continuación realizaremos un ejemplo paso a paso de cómo realizar transforma
 ```python
 import pandas as pd
 
-# Creamos un DataFrame con datos de ejemplo 
+# Creamos un DataFrame con datos de ejemplo y lo mostramos
 data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
         'Edad': [25, 30, None, 22],
         'Salario': [3000, 4000, 3500, None]}
 
 df = pd.DataFrame(data)
+
+print(df)
 ```
 
 <details>
@@ -136,6 +138,9 @@ df = pd.DataFrame(data)
 
 ```python
 df_limpio = df['Edad'].dropna()
+
+# Mostramos el DataFrame limpio
+print(df_limpio)
 ```
 
 </details>
@@ -145,6 +150,9 @@ df_limpio = df['Edad'].dropna()
 
 ```python
 df['Salario'] = df['Salario'].fillna(0)
+
+# Mostramos el DataFrame con los valores nulos rellenados
+print(df)
 ```
 </details>
 
@@ -153,6 +161,9 @@ df['Salario'] = df['Salario'].fillna(0)
 
 ```python
 df['Salario_anual'] = df['Salario'] * 12
+
+# Mostramos el DataFrame con la nueva columna
+print(df)
 ```
 
 </details>
@@ -164,6 +175,7 @@ df['Salario_anual'] = df['Salario'] * 12
 ```python
 df_filtrado = df[df['Edad'] > 25]
 
+# Mostramos el DataFrame filtrado
 print(df_filtrado)
 ```
 
@@ -175,6 +187,7 @@ print(df_filtrado)
 ```python
 df_ordenado = df.sort_values(by='Salario', ascending=False)
 
+# Mostramos el DataFrame ordenado
 print(df_ordenado)
 ```
 
@@ -248,19 +261,26 @@ pip install polars
 Vamos a realizar un ejemplo básico de cómo usar Polars para cargar y filtrar datos de un archivo CSV, observaréis que es muy similar al uso de Pandas:
 
 <details>
-  <summary>Solución</summary>
+  <summary>Solución: Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"</summary>
 
 ```python
 import polars as pl
 
-# Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"
 df = pl.read_csv('datos.csv')
 
 # Mostramos el DataFrame
 print(df)
+```
 
-# Filtramos los datos si el contenido de una columna en concreto es mayor a 25
+</details>
+
+<details>
+  <summary>Solución: Filtramos los datos si el contenido de una columna en concreto es mayor a 25</summary>
+
+```python
 df_filtrado = df.filter(pl.col('columna') > 25)
+
+# Mostramos el DataFrame filtrado
 print(df_filtrado)
 ```
 
@@ -270,34 +290,68 @@ print(df_filtrado)
 
 A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Polars (Creación, Eliminación, Rellenado de valores nulos, Filtrado, Ordenación):
 
-<details>
-  <summary>Solución</summary>
-
 ```python
 import polars as pl
 
-# Creamos un DataFrame con datos de ejemplo
+# Creamos un DataFrame con datos de ejemplo y lo mostramos
 data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
         'Edad': [25, 30, None, 22],
         'Salario': [3000, 4000, 3500, None]}
 
 df = pl.DataFrame(data)
+```
 
-# Eliminamos las filas con valores nulos
+<details>
+  <summary>Solución: Eliminamos las filas con valores nulos</summary>
+
+```python
 df_limpio = df.drop_nulls()
 
-# Rellenamos los valores nulos con un valor por defecto (0)
+# Mostramos el DataFrame limpio
+print(df_limpio)
+```
+</details>
+
+<details>
+  <summary>Solución: Rellenamos los valores nulos con un valor por defecto (0)</summary>
+
+```python
 df = df.with_columns(pl.col('Salario').fill_null(0))
 
-# Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12
+# Mostramos el DataFrame con los valores nulos rellenados
+print(df)
+```
+</details>
+
+<details>
+  <summary>Solución: Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12</summary>
+
+```python
 df = df.with_columns((pl.col('Salario') * 12).alias('Salario_anual'))
 
-# Filtramos los datos (solo personas mayores de 25 años)
+# Mostramos el DataFrame con la nueva columna
+print(df)
+```
+</details>
+
+<details>
+  <summary>Solución: Filtramos los datos (solo personas mayores de 25 años)</summary>
+
+```python
 df_filtrado = df.filter(pl.col('Edad') > 25)
 
-# Ordenamos los datos por salario en orden descendente
+# Mostramos el DataFrame filtrado
+print(df_filtrado)
+```
+</details>
+
+<details>
+  <summary>Solución: Ordenamos los datos por salario en orden descendente</summary>
+
+```python
 df_ordenado = df.sort('Salario', reverse=True)
 
+# Mostramos el DataFrame ordenado
 print(df_ordenado)
 ```
 
