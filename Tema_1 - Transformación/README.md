@@ -92,19 +92,25 @@ pip install pandas
 Vamos a realizar un ejemplo básico de cómo usar Pandas para cargar y filtrar datos de un archivo CSV:
 
 <details>
-  <summary>Solución</summary>
+  <summary>Solución: Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"</summary>
 
 ```python
 import pandas as pd
 
-# Cargamos los datos del archivo CSV ubicado en la carpeta de "Recursos"
 df = pd.read_csv('datos.csv')
 
 # Mostramos el DataFrame
 print(df)
+```
+</details>
 
-# Filtramos los datos si el contenido de una columna en concreto es mayor a 25
+<details>
+  <summary>Solución: Filtramos los datos si el contenido de una columna en concreto es mayor a 25</summary>
+
+```python
 df_filtrado = df[df['columna'] > 25]
+
+# Mostramos el DataFrame filtrado
 print(df_filtrado)
 ```
 
@@ -113,9 +119,6 @@ print(df_filtrado)
 ## Ejemplo básico de transformación con Pandas
 
 A continuación realizaremos un ejemplo paso a paso de cómo realizar transformaciones comunes con Pandas (Creación, Eliminación, Rellenado de valores nulos, Filtrado, Ordenación):
-
-<details>
-  <summary>Solución</summary>
 
 ```python
 import pandas as pd
@@ -126,20 +129,50 @@ data = {'Nombre': ['Ana', 'Luis', 'María', 'Juan'],
         'Salario': [3000, 4000, 3500, None]}
 
 df = pd.DataFrame(data)
+```
 
-# Eliminamos las edades con valores nulos (n/a) 
+<details>
+  <summary>Solución: Eliminamos las edades con valores nulos (n/a)</summary>
+
+```python
 df_limpio = df['Edad'].dropna()
+```
 
-# Rellenamos los valores nulos con un valor por defecto (0) 
+</details>
+
+<details>
+  <summary>Solución: Rellenamos los valores nulos con un valor por defecto (0)</summary>
+
+```python
 df['Salario'] = df['Salario'].fillna(0)
+```
+</details>
 
-# Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12. 
+<details>
+  <summary>Solución: Creamos una nueva columna "Salario_anual" cuyos valores son el resultado de multiplicar el valor correspondiente de la columna "Salario" por 12.</summary>
+
+```python
 df['Salario_anual'] = df['Salario'] * 12
+```
 
-# Filtramos los datos (solo personas mayores de 25 años) 
+</details>
+
+
+<details>
+  <summary>Solución:  Filtramos los datos (solo personas mayores de 25 años)</summary>
+
+```python
 df_filtrado = df[df['Edad'] > 25]
 
-# Ordenamos los datos por salario, podemos elegir si queremos orden ascendente (true) o como en este caso, descendente (False) 
+print(df_filtrado)
+```
+
+</details>
+
+<details>
+  <summary>Solución:  Ordenamos los datos por salario, podemos elegir si queremos orden ascendente (true) o como en este caso, descendente (False)</summary>
+
+```python
 df_ordenado = df.sort_values(by='Salario', ascending=False)
 
 print(df_ordenado)
@@ -294,4 +327,124 @@ print(df_ordenado)
 
 - **Pandas** es ideal para tareas de análisis exploratorio y manipulación de datos en proyectos pequeños o medianos, gracias a su facilidad de uso y amplia documentación.
 - **Polars** destaca en escenarios donde el rendimiento y la escalabilidad son críticos, siendo una opción excelente para trabajar con grandes volúmenes de datos o pipelines complejos.
+
+<hr>
+
+### ¡Bien! Ahora que hemos aprendido un poco sobre Pandas y Polars, vamos a ver la librería de NumPy, la cual será nuestra mayor aliada para la realización de opreaciones matemáticas.
+
+# ¿Qué es NumPy?
+
+NumPy es una biblioteca fundamental para la computación científica en Python. Proporciona soporte para trabajar con arrays multidimensionales y una amplia colección de funciones matemáticas de alto rendimiento para operar con ellos. Es ampliamente utilizada en análisis de datos, aprendizaje automático, simulaciones científicas y más.
+
+## ¿En qué se basa?
+
+NumPy se basa en la estructura de datos llamada **ndarray** (array multidimensional), que permite realizar operaciones matemáticas de manera eficiente y vectorizada.
+
+- **ndarray**: Una estructura de datos que representa un array multidimensional homogéneo (todos los elementos deben ser del mismo tipo).
+
+Esta estructura está optimizada para realizar operaciones matemáticas y lógicas de manera rápida, aprovechando las capacidades del hardware.
+
+## Funciones principales
+
+NumPy incluye una amplia gama de funcionalidades, entre las que destacan:
+
+- **Creación de arrays**: Generar arrays desde listas, rangos, o mediante funciones como `arange`, `linspace` y `random`.
+- **Operaciones matemáticas**: Suma, resta, multiplicación, división, potencias, raíces, etc., aplicadas de manera vectorizada.
+- **Manipulación de arrays**: Cambio de forma, transposición, concatenación y división de arrays.
+- **Funciones estadísticas**: Cálculo de media, mediana, desviación estándar, varianza, etc.
+- **Álgebra lineal**: Operaciones con matrices, determinantes, inversas, descomposiciones, etc.
+- **Manejo de datos faltantes**: Uso de máscaras y valores especiales como `np.nan` (NaN = Not A Number).
+
+## ¿Para qué se usa NumPy?
+
+NumPy es ideal para:
+
+- **Cálculos matemáticos y científicos**: Realizar operaciones complejas de manera eficiente.
+- **Procesamiento de datos**: Manipular y transformar datos en arrays multidimensionales.
+- **Simulaciones**: Crear modelos matemáticos y realizar simulaciones numéricas.
+- **Aprendizaje automático**: Preparar datos para modelos de machine learning.
+- **Gráficos y visualización**: Generar datos para visualizaciones con bibliotecas como Matplotlib.
+
+## Mejores casos de uso
+
+NumPy es especialmente útil en los siguientes escenarios:
+
+1. **Procesamiento de imágenes**: Trabajar con datos de imágenes representados como arrays.
+2. **Simulaciones científicas**: Resolver ecuaciones diferenciales, simulaciones físicas, etc.
+3. **Análisis de datos**: Realizar cálculos estadísticos y transformaciones de datos.
+4. **Optimización matemática**: Resolver problemas de optimización y álgebra lineal.
+5. **Preparación de datos**: Transformar datos en un formato adecuado para modelos de aprendizaje automático.
+
+## Instalación
+
+Para instalar NumPy, puedes usar `pip`:
+
+<details>
+  <summary>Solución</summary>
+
+```bash
+pip install numpy
+```
+</details>
+
+## Ejemplo básico de cómo usar NumPy para crear y manipular arrays:
+
+<details> <summary>Solución</summary>
+
+```python
+import numpy as np
+
+# Creamos un array unidimensional(array) y otro bidimensional(matriz)
+array = np.array([1, 2, 3, 4, 5])
+matriz = np.array([[1, 2, 3], [4, 5, 6]])
+
+# Realizamos operaciones matemáticas (Array multiplicado por 2, Suma de los elementos de la matriz)
+array_doble = array * 2
+suma = np.sum(matriz)
+
+print("Array original:", array)
+print("Array multiplicado por 2:", array_doble)
+print("Suma de los elementos de la matriz:", suma)
+```
+
+</details>
+
+
+## Ejemplo básico de transformación con NumPy
+
+<details> <summary>Solución</summary>
+
+```python
+import numpy as np
+
+# Creamos un array con valores aleatorios
+array = np.random.randint(1, 100, size=(4, 4))
+
+# Calculamos la media y la desviación estándar
+media = np.mean(array)
+desviacion = np.std(array)
+
+# Normalizamos los datos (restamos la media y dividimos por la desviación estándar)
+array_normalizado = (array - media) / desviacion
+
+# Transponemos el array
+array_transpuesto = array.T
+
+# Filtramos los elementos mayores a 50
+array_filtrado = array[array > 50]
+
+print("Array original:\n", array)
+print("Array normalizado:\n", array_normalizado)
+print("Array transpuesto:\n", array_transpuesto)
+print("Elementos mayores a 50:", array_filtrado)
+```
+
+</details>
+
+## Recursos adicionales de NumPy
+
+- [Documentación oficial de NumPy](https://numpy.org/doc/)
+- [Repositorio de NumPy en GitHub](https://github.com/numpy/numpy)
+- [Tutoriales de NumPy](https://numpy.org/doc/stable/user/quickstart.html)
+- [Funciones estadísticas en NumPy](https://numpy.org/doc/stable/reference/routines.statistics.html)
 
