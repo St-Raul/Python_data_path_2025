@@ -201,6 +201,7 @@ print(df_ordenado)
 - [Guía de limpieza de datos con Pandas](https://pandas.pydata.org/docs/user_guide/missing_data.html)
 - [Transformaciones avanzadas con Pandas](https://pandas.pydata.org/docs/user_guide/reshaping.html)
 
+<hr>
 
 # ¿Qué es Polars?
 
@@ -384,7 +385,7 @@ print(df_ordenado)
 
 <hr>
 
-### ¡Bien! Ahora que hemos aprendido un poco sobre Pandas y Polars, vamos a ver la librería de NumPy, la cual será nuestra mayor aliada para la realización de opreaciones matemáticas.
+### ¡Bien! Ahora que hemos aprendido un poco sobre Pandas y Polars, vamos a ver la librería de NumPy, la cual será nuestra mayor aliada para la realización de operaciones matemáticas.
 
 # ¿Qué es NumPy?
 
@@ -540,3 +541,4 @@ print("Elementos mayores a 50:", array_filtrado)
 - [Tutoriales de NumPy](https://numpy.org/doc/stable/user/quickstart.html)
 - [Funciones estadísticas en NumPy](https://numpy.org/doc/stable/reference/routines.statistics.html)
 
+<hr>
